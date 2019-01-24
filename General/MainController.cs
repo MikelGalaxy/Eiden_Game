@@ -5,14 +5,26 @@ using UnityEngine;
 public class MainController : MonoBehaviour {
 
     // Use this for initialization
-    public Hero MainHero;
+    public Hero mainHero;
+    public GlobalUiController mainUiController;
 
-	void Start () {
-		
-	}
+	void Awake () {
+
+        //LoadCharacterToControlls();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    //void LoadCharacterToControlls()
+    //{
+    //    //mainHero
+    //    if(mainHero!=null && mainUiController!=null)
+    //    {
+    //        mainUiController.LoadCharacterToUiControlls(mainHero);
+    //    }
+    //}
 }
