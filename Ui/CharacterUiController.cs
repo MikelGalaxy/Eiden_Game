@@ -6,6 +6,7 @@ using UnityEngine;
 public class CharacterUiController : MonoBehaviour
 {
     // Start is called before the first frame update
+    private GameObject characterNameTextObject;
     private GameObject lvlTextObject;
 
     private GameObject hpTextObject;
@@ -36,6 +37,15 @@ public class CharacterUiController : MonoBehaviour
             return;
         }
         LoadIntoObjects();
+        if (characterNameTextObject && !string.IsNullOrEmpty(hero.Name))
+        {
+            var charNameText = characterNameTextObject.GetComponent<TextMeshProUGUI>();
+            charNameText.text = hero.Name;
+            if(!string.IsNullOrEmpty(hero.Title))
+            {
+                charNameText.text += $" {hero.Title}";
+            }
+        }
         if (lvlTextObject && hero.LEVEL!=0)
         {
             lvlTextObject.GetComponent<TextMeshProUGUI>().text = hero.LEVEL.ToString();
@@ -82,6 +92,11 @@ public class CharacterUiController : MonoBehaviour
 
     private void LoadIntoObjects()
     {
+        if(!characterNameTextObject)
+        {
+            characterNameTextObject = GameObject.Find("CharacterNameLbl");
+        }
+
         if (!lvlTextObject)
         {
             lvlTextObject = GameObject.Find("LvlNumberLbl");

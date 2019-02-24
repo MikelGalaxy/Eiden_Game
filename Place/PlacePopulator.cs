@@ -14,13 +14,22 @@ public class PlacePopulator
             {
                 PlaceName = "Gorwor",
                 PlaceType = PlaceType.Village,
-                PlaceSize = PlaceSize.Medium
+                PlaceSize = PlaceSize.Medium,
+                BgImage = Resources.Load<Sprite>("SceensBgGraphics/village1"),
             },
             new Place
             {
                 PlaceName = "Rogrok",
                 PlaceType = PlaceType.Village,
-                PlaceSize = PlaceSize.Small
+                PlaceSize = PlaceSize.Small,
+                BgImage = Resources.Load<Sprite>("SceensBgGraphics/village2"),
+            },
+            new Place
+            {
+                PlaceName = "Slamy",
+                PlaceType = PlaceType.Village,
+                PlaceSize = PlaceSize.Medium,
+                BgImage = Resources.Load<Sprite>("SceensBgGraphics/village3"),
             },
         };
     }

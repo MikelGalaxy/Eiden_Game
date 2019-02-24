@@ -50,6 +50,7 @@ public class GlobalUiController : MonoBehaviour
             }
             else
             {
+                SwitchOffOtherUi();
                 optionsUi.SetActive(true);
             }
         }
@@ -65,6 +66,7 @@ public class GlobalUiController : MonoBehaviour
             }
             else
             {
+                SwitchOffOtherUi();
                 characterUi.SetActive(true);
                 LoadCharacterToUiControlls();
             }
@@ -96,6 +98,13 @@ public class GlobalUiController : MonoBehaviour
         }
 
     }
+
+    public void SwitchOffOtherUi()
+    {
+        optionsUi.SetActive(false);
+        characterUi.SetActive(false);
+    }
+
 
 
 }

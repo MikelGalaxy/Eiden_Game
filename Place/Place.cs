@@ -7,5 +7,6 @@ public class Place {
     public string PlaceName { get; set; }
     public PlaceType PlaceType { get; set; }
     public PlaceSize PlaceSize { get; set; }
+    public Sprite BgImage { get; set; }
 
 }

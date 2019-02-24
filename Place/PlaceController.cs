@@ -6,6 +6,8 @@ public class PlaceController : MonoBehaviour
 {
     public List<Place> placeList;
     public GameObject placeCanvas;
+    public SpriteRenderer placeBackground; 
+
     void Start()
     {
         var populator = new PlacePopulator();
@@ -14,7 +16,7 @@ public class PlaceController : MonoBehaviour
 
         if (placeCanvas != null)
         {
-            LoadPlace(placeList[1]);
+            LoadPlace(placeList[2]);
         }
     }
 
@@ -27,6 +29,12 @@ public class PlaceController : MonoBehaviour
         }
         var placeUi = placeCanvas.GetComponent<PlaceUiController>();
         placeUi.UpdateVillageName(place.PlaceName);
+
+        if(placeBackground && place.BgImage)
+        {
+            placeBackground.sprite = place.BgImage;
+        }
+
     }
 
     // Update is called once per frame

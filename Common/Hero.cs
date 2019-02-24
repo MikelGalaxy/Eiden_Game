@@ -15,6 +15,15 @@ public class Hero : MonoBehaviour
     }
 
     [SerializeField]
+    private string _title;
+    public string Title
+    {
+        get { return _title; }
+        set { _title = value; }
+    }
+
+
+    [SerializeField]
     private int _str;
     public int STR
     {
@@ -115,13 +124,14 @@ public class Hero : MonoBehaviour
     private void SetTestCharacter()
     {
         Name = "Eiden";
+        Title = "The Noob";
         LEVEL = 1;
-        STR = 5;
-        AGI = 5;
-        INT = 5;
-        WIS = 5;
-        CHA = 5;
-        END = 5;
+        STR = 4;
+        AGI = 4;
+        INT = 6;
+        WIS = 6;
+        CHA = 3;
+        END = 4;
         MAX_HP = 100;
         MAX_MANA = 100;
         CURRENT_HP = MAX_HP;
